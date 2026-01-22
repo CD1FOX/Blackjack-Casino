@@ -20,7 +20,7 @@ export function UISystem(gameStateSystem, cardDistributerSystem, handEvaluatorSy
 
     hitbtn.addEventListener("click", ()=> {
         console.log(gameStateSystem.playerCardCount)
-        gameStateSystem.playerHand.push(cardDistributerSystem.RandomCard())
+        gameStateSystem.playerHand.push(cardDistributerSystem.RandomCard("player"))
         console.log(gameStateSystem.playerCardCount)
         gameStateSystem.playerHandValue += parseInt(handEvaluatorSystem.cardValueSetter(gameStateSystem.playerHand, (gameStateSystem.playerCardCount - 1), gameStateSystem.playerHandValue), 10)
 
