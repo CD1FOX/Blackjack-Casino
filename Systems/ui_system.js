@@ -1,4 +1,4 @@
-export function UISystem(gameStateSystem, cardDistributerSystem, handEvaluatorSystem) {
+export function UISystem(gameStateSystem, cardDistributerSystem, handEvaluatorSystem, turnBaseSystem) {
     const playbtn = document.querySelector(".play-btn")
     const hitbtn = document.querySelector(".hit-btn")
     const stopbtn = document.querySelector(".stop-btn")
@@ -26,5 +26,10 @@ export function UISystem(gameStateSystem, cardDistributerSystem, handEvaluatorSy
 
         console.log(gameStateSystem.playerHand)
         console.log(gameStateSystem.playerHandValue)
+    })
+
+    stopbtn.addEventListener("click", ()=> {
+        turnBaseSystem.changeTurn("house")
+        console.log(gameStateSystem.turn)
     })
 }
