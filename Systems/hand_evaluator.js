@@ -1,6 +1,6 @@
-export class HandEvaluatorSystem {
-    constructor(gameStateSystem) {
-        this.gameStateSystem = gameStateSystem
+export class HandEvaluator {
+    constructor(gameState) {
+        this.gameState = gameState
     }
 
     cardValueSetter(hand, cardIndex, handValue) {

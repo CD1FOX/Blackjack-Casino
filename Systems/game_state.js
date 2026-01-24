@@ -1,4 +1,4 @@
-export class GameStateSystem {
+export class GameState {
     constructor() {
         this.houseHand = []
         this.playerHand = []
@@ -6,6 +6,6 @@ export class GameStateSystem {
         this.playerHandValue = null
         this.houseCardCount = 0
         this.playerCardCount = 0
-        this.turn = "player"
+        this.currentTurn = "player"
     }
 }

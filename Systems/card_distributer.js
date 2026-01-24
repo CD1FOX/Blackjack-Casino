@@ -1,10 +1,10 @@
 export class CardDistributer {
-    constructor(gameStateSystem) {
-        this.gameStateSystem = gameStateSystem
+    constructor(gameState) {
+        this.gameState = gameState
     }
 
-    RandomCard(hand) {
-        this.gameStateSystem[`${hand}CardCount`] += 1
+    DrawCard(hand) {
+        this.gameState[`${hand}CardCount`] += 1
         const cardSymbol = ["♠", "♥", "♦", "♣"]
         const cardDeck = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
