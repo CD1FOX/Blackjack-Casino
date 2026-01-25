@@ -4,14 +4,14 @@ export function UI(gameState, cardDistributer, handEvaluator, turnBase) {
     const stopbtn = document.querySelector(".stop-btn")
 
     playbtn.addEventListener("click", () => {
-        gameState.houseHand = [cardDistributer.DrawCard("house"), cardDistributer.drawCard("house")]
+        cardDistributer.DrawHand("house")
         gameState.playerHand = [cardDistributer.DrawCard("player"), cardDistributer.DrawCard("player")]
 
         console.log(`${gameState.houseHand} \n${gameState.playerHand}`)
 
 
-        gameState.playerHandValue = parseInt(handEvaluator.cardValueSetter(gameState.playerHand, 0, gameState.playerHandValue), 10)
-        gameState.playerHandValue += parseInt(handEvaluator.cardValueSetter(gameState.playerHand, 1, gameState.playerHandValue), 10)
+        gameState.playerHandValue = parseInt(handEvaluator.determineCardValue(gameState.playerHand, 0, gameState.playerHandValue), 10)
+        gameState.playerHandValue += parseInt(handEvaluator.determineCardValue(gameState.playerHand, 1, gameState.playerHandValue), 10)
 
         console.log(gameState.playerHandValue)
 
@@ -22,7 +22,7 @@ export function UI(gameState, cardDistributer, handEvaluator, turnBase) {
         console.log(gameState.playerCardCount)
         gameState.playerHand.push(cardDistributer.DrawCard("player"))
         console.log(gameState.playerCardCount)
-        gameState.playerHandValue += parseInt(handEvaluator.cardValueSetter(gameState.playerHand, (gameState.playerCardCount - 1), gameState.playerHandValue), 10)
+        gameState.playerHandValue += parseInt(handEvaluator.determineCardValue(gameState.playerHand, (gameState.playerCardCount - 1), gameState.playerHandValue), 10)
 
         console.log(gameState.playerHand)
         console.log(gameState.playerHandValue)

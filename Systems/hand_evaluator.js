@@ -3,7 +3,7 @@ export class HandEvaluator {
         this.gameState = gameState
     }
 
-    cardValueSetter(hand, cardIndex, handValue) {
+    determineCardValue(hand, cardIndex, handValue) {
         let cardValue = hand[cardIndex].slice(1)
 
         if (isFinite(cardValue)) {
