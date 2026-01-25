@@ -4,18 +4,22 @@ export class HandEvaluator {
     }
 
     determineCardValue(hand, cardIndex, handValue) {
-        let cardValue = hand[cardIndex].slice(1)
+        let number = this.sliceCardNumber(hand, cardIndex)
 
-        if (isFinite(cardValue)) {
-            return cardValue
-        } else if (cardValue === "A") {
+        if (isFinite(number)) {
+            return number
+        } else if (number === "A") {
             if (handValue > 10) {
-                return cardValue = 1
+                return number = 1
             } else {
-                return cardValue = 11
+                return number = 11
             }
         } else {
             return 10
         }
+    }
+
+    sliceCardNumber(hand, cardIndex){
+        return hand[cardIndex].slice(1)
     }
 }
