@@ -16,10 +16,8 @@ export function UI(gameState, cardDistributer, handEvaluator, turnBase) {
     })
 
     hitbtn.addEventListener("click", ()=> {
-        console.log(gameState.playerCardCount)
         gameState.playerHand.push(cardDistributer.drawCard("player"))
-        console.log(gameState.playerCardCount)
-        gameState.playerHandValue += parseInt(handEvaluator.determineCardValue(gameState.playerHand, (gameState.playerCardCount - 1), gameState.playerHandValue), 10)
+        gameState.playerHandValue += parseInt(handEvaluator.determineCardValue(gameState.playerHand, (gameState.playerHand.length - 1), gameState.playerHandValue), 10)
 
         console.log(gameState.playerHand)
         console.log(gameState.playerHandValue)
