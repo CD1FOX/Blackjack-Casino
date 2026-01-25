@@ -1,4 +1,4 @@
-export function UI(gameState, cardDistributer, handEvaluator, turnBase, cardEvaluator) {
+export function UI(entity, gameState, cardDistributer, handEvaluator, turnBase, cardEvaluator) {
     const playbtn = document.querySelector(".play-btn")
     const hitbtn = document.querySelector(".hit-btn")
     const stopbtn = document.querySelector(".stop-btn")

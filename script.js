@@ -1,13 +1,13 @@
-import { GameState } from "./Systems/game_state.js"
-import { CardDistributer } from "./Systems/card_distributer.js"
-import { HandEvaluator } from "./Systems/hand_evaluator.js"
-import { TurnBase } from "./Systems/turn_base.js"
-import { CardEvaluator } from "./Systems/card_evaluator.js"
-import { UI } from "./Systems/UI.js"
 
-const gameState = new GameState()
-const cardDistributer = new CardDistributer(gameState)
-const handEvaluator = new HandEvaluator(gameState)
-const turnBase = new TurnBase(gameState)
-const cardEvaluator = new CardEvaluator(gameState)
-const pageUI = new UI(gameState, cardDistributer, handEvaluator, turnBase, cardEvaluator)
+import { HandEvaluator } from "./systems/hand-evaluator.js"
+import { TurnBase } from "./systems/turn-base.js"
+import { CardEvaluator } from "./systems/card-evaluator.js"
+import { Entity } from "./Entity/entity.js"
+import { UI } from "./ui/UI.js"
+
+const handEvaluator = new HandEvaluator()
+const turnBase = new TurnBase()
+const cardEvaluator = new CardEvaluator()
+const player = new Entity("player")
+const dealer = new Entity("dealer")
+const pageUI = new UI(entity, cardDistributer, handEvaluator, turnBase, cardEvaluator)
