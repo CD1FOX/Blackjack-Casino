@@ -4,7 +4,7 @@ export class HandEvaluator {
     }
 
     determineCardValue(hand, indexRank, handValue) {
-        // Index = Symbol + card value in a deck of card. It is the same label with the index in array lol, so I called indexRank
+        // Index = Symbol + number/letter value in a deck of card. It is the same label with the index in array lol, so I called indexRank
         let value = this.sliceCardIndex(hand, indexRank)
 
         if (isFinite(value)) {

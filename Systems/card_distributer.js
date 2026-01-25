@@ -6,11 +6,16 @@ export class CardDistributer {
     }
 
     drawCard() {
-        const randomCardSymbol = this.cardSymbol[Math.floor(Math.random() * this.cardSymbol.length)]
-        const randomCardDeck = this.cardDeck[Math.floor(Math.random() * this.cardDeck.length)]
+        const randomCardSymbol = this.drawRandomIndex(this.cardSymbol)
+        const randomCardDeck = this.drawRandomIndex(this.cardDeck)
 
+        // Index = Symbol + number/letter value in a deck of card. It is the same label with the index in array lol
         const chosenCard = `${randomCardSymbol}${randomCardDeck}`
         return chosenCard
+    }
+
+    drawRandomIndex(array){
+        return array[Math.floor(Math.random() * array.length)]
     }
 
     drawHand(hand){
