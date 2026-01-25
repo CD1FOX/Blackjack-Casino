@@ -15,7 +15,7 @@ export class CardDistributer {
         return chosenCard
     }
 
-    drawHand(hand){
-        hand["Hand"] = [DrawCard(hand), DrawCard(hand)]
+    drawHand(hand){ 
+        this.gameState[`${hand}Hand`] = [this.drawCard(hand), this.drawCard(hand)]
     }
 }

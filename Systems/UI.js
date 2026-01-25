@@ -4,23 +4,20 @@ export function UI(gameState, cardDistributer, handEvaluator, turnBase) {
     const stopbtn = document.querySelector(".stop-btn")
 
     playbtn.addEventListener("click", () => {
-        cardDistributer.DrawHand("house")
-        gameState.playerHand = [cardDistributer.DrawCard("player"), cardDistributer.DrawCard("player")]
+        cardDistributer.drawHand("house")
+        cardDistributer.drawHand("player")
 
         console.log(`${gameState.houseHand} \n${gameState.playerHand}`)
-
 
         gameState.playerHandValue = parseInt(handEvaluator.determineCardValue(gameState.playerHand, 0, gameState.playerHandValue), 10)
         gameState.playerHandValue += parseInt(handEvaluator.determineCardValue(gameState.playerHand, 1, gameState.playerHandValue), 10)
 
         console.log(gameState.playerHandValue)
-
-        
     })
 
     hitbtn.addEventListener("click", ()=> {
         console.log(gameState.playerCardCount)
-        gameState.playerHand.push(cardDistributer.DrawCard("player"))
+        gameState.playerHand.push(cardDistributer.drawCard("player"))
         console.log(gameState.playerCardCount)
         gameState.playerHandValue += parseInt(handEvaluator.determineCardValue(gameState.playerHand, (gameState.playerCardCount - 1), gameState.playerHandValue), 10)
 
