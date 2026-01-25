@@ -3,23 +3,28 @@ export class HandEvaluator {
         this.gameState = gameState
     }
 
-    determineCardValue(hand, cardIndex, handValue) {
-        let number = this.sliceCardNumber(hand, cardIndex)
+    determineCardValue(hand, indexRank, handValue) {
+        // Index = Symbol + card value in a deck of card. It is the same label with the index in array lol, so I called indexRank
+        let value = this.sliceCardIndex(hand, indexRank)
 
-        if (isFinite(number)) {
-            return number
-        } else if (number === "A") {
-            if (handValue > 10) {
-                return number = 1
-            } else {
-                return number = 11
-            }
+        if (isFinite(value)) {
+            return value
+        } else if (value === "A") {
+            return this.determineAceValue(handValue)
         } else {
             return 10
         }
     }
 
-    sliceCardNumber(hand, cardIndex){
+    sliceCardIndex(hand, cardIndex) {
         return hand[cardIndex].slice(1)
+    }
+
+    determineAceValue(handValue) {
+        if (handValue > 10) {
+            return 1
+        } else {
+            return 11
+        }
     }
 }
