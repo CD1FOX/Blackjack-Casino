@@ -4,27 +4,12 @@ export function UI(gameState, cardDistributer, handEvaluator, turnBase, cardEval
     const stopbtn = document.querySelector(".stop-btn")
 
     playbtn.addEventListener("click", () => {
-        cardDistributer.drawHand("house")
-        cardDistributer.drawHand("player")
+        const dealerHand = cardDistributer.drawHand()
+        const playerHand = cardDistributer.drawHand()
 
-        console.log(`${gameState.houseHand} \n${gameState.playerHand}`)
-
-        gameState.playerHandValue = parseInt(cardEvaluator.determineCardValue(gameState.playerHand, 0, gameState.playerHandValue), 10)
-        gameState.playerHandValue += parseInt(cardEvaluator.determineCardValue(gameState.playerHand, 1, gameState.playerHandValue), 10)
-
-        console.log(gameState.playerHandValue)
+        // gameState.playerHandValue = parseInt(cardEvaluator.determineCardValue(playerHand, 0, gameState.playerHandValue), 10)
+        // gameState.playerHandValue += parseInt(cardEvaluator.determineCardValue(playerHand, 1, gameState.playerHandValue), 10)
     })
 
-    hitbtn.addEventListener("click", ()=> {
-        gameState.playerHand.push(cardDistributer.drawCard("player"))
-        gameState.playerHandValue += parseInt(cardEvaluator.determineCardValue(gameState.playerHand, (gameState.playerHand.length - 1), gameState.playerHandValue), 10)
 
-        console.log(gameState.playerHand)
-        console.log(gameState.playerHandValue)
-    })
-
-    stopbtn.addEventListener("click", ()=> {
-        turnBase.changeTurn("house")
-        console.log(gameState.turn)
-    })
 }
