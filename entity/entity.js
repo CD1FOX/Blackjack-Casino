@@ -14,7 +14,7 @@ export class Entity {
         for (let i = 0; i < cardAmount; i++) {
             this.hand.push(this.cardDealer.drawCard())
         }
-        
+
         return this.hand
     }
 
@@ -26,7 +26,7 @@ export class Entity {
         return this.handValue
     }
 
-    resetHand(){
+    resetHand() {
         this.hand = []
         this.handValue = 0
     }
