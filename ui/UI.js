@@ -13,6 +13,4 @@ export function UI(player, dealer) {
         dealer.resetHand()
         player.resetHand()
     })
-
-
 }

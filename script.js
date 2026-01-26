@@ -3,4 +3,4 @@ import { UI } from "./ui/UI.js"
 
 const player = new Entity("player")
 const dealer = new Entity("dealer")
-const pageUI = new UI(dealer, player)
+const ui = new UI(dealer, player)
