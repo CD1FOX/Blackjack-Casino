@@ -1,4 +1,4 @@
-export function UI(player, dealer) {
+export function UI(dealer, player) {
     const playbtn = document.querySelector(".play-btn")
     const hitbtn = document.querySelector(".hit-btn")
     const stopbtn = document.querySelector(".stop-btn")
