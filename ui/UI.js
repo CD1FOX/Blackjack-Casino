@@ -4,8 +4,9 @@ export function UI(player, dealer) {
     const stopbtn = document.querySelector(".stop-btn")
 
     playbtn.addEventListener("click", () => {
-        player.getCard(2)
-        player.getHandValue()
+        console.log(player.getCard(2))
+        console.log(player.getHandValue())
+        player.resetHand()
     })
 
 

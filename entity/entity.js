@@ -10,14 +10,24 @@ export class Entity {
         this.handValueEvaluator = new HandValueEvaluator()
     }
 
-    getCard(cardAmount){
-        for (let i = 0; i < cardAmount; i++){
+    getCard(cardAmount) {
+        for (let i = 0; i < cardAmount; i++) {
             this.hand.push(this.cardDealer.drawCard())
         }
-        console.log(this.hand)
+        
+        return this.hand
     }
 
-    getHandValue(){
-        console.log(this.handValueEvaluator.determineCardValue(this.hand, this.handValue))
+    getHandValue() {
+        for (const card of this.hand) {
+            this.handValue += this.handValueEvaluator.determineCardValue(card, this.handValue)
+        }
+
+        return this.handValue
+    }
+
+    resetHand(){
+        this.hand = []
+        this.handValue = 0
     }
 }
