@@ -1,15 +1,26 @@
 export class CardDealer {
-    drawCard() {
-        return (`${this.drawRandomCardSymbol()}${this.drawRandomCardValue()}`)
+    constructor() {
+        this.deckValueCards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
     }
 
-    drawRandomCardSymbol() {
+    drawCard() {
+        return (`${this.getRandomCardSymbol()}${this.getRandomCardValue()}`)
+    }
+
+    getRandomCardSymbol() {
         const cardSymbol = ["♠", "♥", "♦", "♣"]
         return cardSymbol[Math.floor(Math.random() * cardSymbol.length)]
     }
 
-    drawRandomCardValue() {
-        const cardValue = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-        return cardValue[Math.floor(Math.random() * cardValue.length)]
+    getRandomCardValue() {
+        const randomValue = this.deckValueCards[Math.floor(Math.random() * this.deckValueCards.length)]
+
+        const cardValue = this.removeCardValue(randomValue)
+
+        return cardValue
+    }
+
+    removeCardValue(randomValue) {
+        return this.deckValueCards.splice(randomValue, 1)[0]
     }
 }
