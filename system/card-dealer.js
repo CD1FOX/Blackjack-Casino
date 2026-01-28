@@ -1,8 +1,6 @@
-export class CardDealer {
-    constructor() {
-        this.deckValueCards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-    }
+export const deckValueCards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
+export class CardDealer {
     drawCard() {
         return (`${this.getRandomCardSymbol()}${this.getRandomCardValue()}`)
     }
@@ -13,14 +11,14 @@ export class CardDealer {
     }
 
     getRandomCardValue() {
-        const randomValue = this.deckValueCards[Math.floor(Math.random() * this.deckValueCards.length)]
-
+        const randomValue = deckValueCards[Math.floor(Math.random() * deckValueCards.length)]
+        
         const cardValue = this.removeCardValue(randomValue)
 
         return cardValue
     }
 
     removeCardValue(randomValue) {
-        return this.deckValueCards.splice(randomValue, 1)[0]
+        return deckValueCards.splice(randomValue, 1)[0]
     }
 }

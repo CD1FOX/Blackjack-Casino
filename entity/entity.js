@@ -1,5 +1,6 @@
 import { CardDealer } from "../system/card-dealer.js"
 import { HandValueEvaluator } from "../system/hand-value-evaluator.js"
+import { deckValueCards } from "../system/card-dealer.js"
 
 export class Entity {
     constructor(name) {
@@ -14,7 +15,7 @@ export class Entity {
             this.hand.push(this.cardDealer.drawCard())
         }
 
-        console.log(this.cardDealer.deckValueCards)
+        console.log(deckValueCards)
         console.log(this.hand)
     }
 
