@@ -1,24 +1,24 @@
-export const deckValueCards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+const cardSymbol = ["♠", "♥", "♦", "♣"]
+const deckValueCards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+export let indexCombination = []
 
 export class CardDealer {
-    drawCard() {
-        return (`${this.getRandomCardSymbol()}${this.getRandomCardValue()}`)
+    shuffleDeckCard (){
+        indexCombination = []
+
+        for (let symbol of cardSymbol){
+            for (let value of deckValueCards){
+                indexCombination.push(`${symbol}${value}`)
+            }
+        }
     }
 
-    getRandomCardSymbol() {
-        const cardSymbol = ["♠", "♥", "♦", "♣"]
-        return cardSymbol[Math.floor(Math.random() * cardSymbol.length)]
-    }
+    drawRandomCard(){
+        if (indexCombination.length === 0){
+            return "No more combinations"
+        }
 
-    getRandomCardValue() {
-        const randomValue = deckValueCards[Math.floor(Math.random() * deckValueCards.length)]
-        
-        const cardValue = this.removeCardValue(randomValue)
-
-        return cardValue
-    }
-
-    removeCardValue(randomValue) {
-        return deckValueCards.splice(randomValue, 1)[0]
+        const randomIndex = Math.floor(Math.random() * indexCombination.length)
+        return indexCombination.splice(randomIndex, 1)[0]
     }
 }

@@ -1,4 +1,4 @@
-import { Entity } from "./Entity/entity.js"
+import { Entity } from "./entity/entity.js"
 import { UI } from "./ui/UI.js"
 
 const player = new Entity("player")

@@ -4,13 +4,17 @@ export function UI(dealer, player) {
     const stopbtn = document.querySelector(".stop-btn")
 
     playbtn.addEventListener("click", () => {
-        dealer.drawCard(2)
-        player.drawCard(2)
+        const initialCard = 2
 
-        console.log(dealer.getHandValue())
+        player.drawCard(initialCard)
         console.log(player.getHandValue())
+
 
         dealer.resetHand()
         player.resetHand()
+    })
+
+    hitbtn.addEventListener("click", () => {
+        
     })
 }

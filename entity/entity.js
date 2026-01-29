@@ -1,6 +1,6 @@
 import { CardDealer } from "../system/card-dealer.js"
 import { HandValueEvaluator } from "../system/hand-value-evaluator.js"
-import { deckValueCards } from "../system/card-dealer.js"
+import { indexCombination } from "../system/card-dealer.js"
 
 export class Entity {
     constructor(name) {
@@ -11,12 +11,12 @@ export class Entity {
     }
 
     drawCard(cardAmount) {
-        for (let i = 0; i < cardAmount; i++) {
-            this.hand.push(this.cardDealer.drawCard())
+        for (let i = 0; cardAmount > i; i++){
+            this.hand.push(this.cardDealer.drawRandomCard())
         }
 
-        console.log(deckValueCards)
         console.log(this.hand)
+        console.log(indexCombination)
     }
 
     getHandValue() {
