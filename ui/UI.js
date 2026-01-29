@@ -5,13 +5,17 @@ const cardDealer = new CardDealer()
 export function UI(dealer, player) {
     const playbtn = document.querySelector(".play-btn")
     const hitbtn = document.querySelector(".hit-btn")
-    const stopbtn = document.querySelector(".stop-btn")
+    const standbtn = document.querySelector(".stand-btn")
 
     playbtn.addEventListener("click", () => {
         const initialCard = 2
 
+        playbtn.disabled = true
+        standbtn.disabled = false
+        hitbtn.disabled = false
+
         cardDealer.shuffleDeckCard()
-        
+
         dealer.drawCard(initialCard)
         player.drawCard(initialCard)
 
@@ -26,7 +30,12 @@ export function UI(dealer, player) {
         
     })
 
-    stopbtn.addEventListener("click", ()=>{
-        player.resetHand()
+    standbtn.addEventListener("click", ()=>{
+        console.log("Player stand")
+        playbtn.disabled = true
+        hitbtn.disabled = true
+        standbtn.disabled = true
+
+        
     })
 }
