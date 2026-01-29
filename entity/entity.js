@@ -5,6 +5,7 @@ export class Entity {
     constructor(name) {
         this.name = name
         this.hand = []  
+        this.handValue = 0
         this.cardDealer = new CardDealer()
         this.handValueEvaluator = new HandValueEvaluator()
     }
@@ -18,14 +19,14 @@ export class Entity {
     }
 
     getHandValue() {
-        let handValue = 0
+        this.handValue = 0
 
         for (const card of this.hand) {
-            handValue += this.handValueEvaluator.determineCardValue(card, handValue)
+            this.handValue += this.handValueEvaluator.determineCardValue(card, this.handValue)
         }
 
-        console.log(this.name + ": " + handValue)
-        return handValue
+        console.log(this.name + ": " + this.handValue)
+        return this.handValue
     }
 
     resetHand() {
