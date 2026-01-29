@@ -1,7 +1,7 @@
 export class HandValueEvaluator {
     determineCardValue(card, handValue) {
         let value = card.slice(1)
-        
+
         if (isFinite(value)) {
             return Number(value)
         } else if (value === "A") {
@@ -16,6 +16,12 @@ export class HandValueEvaluator {
             return 1
         } else {
             return 11
+        }
+    }
+
+    determineBust(handValue, name) {
+        if (handValue > 21) {
+            console.log(`${name} bust`)
         }
     }
 }

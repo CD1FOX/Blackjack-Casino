@@ -1,8 +1,10 @@
+import { Entity } from "./entity.js";
+
 const cardSymbol = ["♠", "♥", "♦", "♣"]
 const deckValueCards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 export let indexCombination = []
 
-export class CardDealer {
+export class Dealer extends Entity {
     shuffleDeckCard() {
         indexCombination = []
 
@@ -20,5 +22,9 @@ export class CardDealer {
 
         const randomIndex = Math.floor(Math.random() * indexCombination.length)
         return indexCombination.splice(randomIndex, 1)[0]
+    }
+
+    decideDealerAction(dealer, player) {
+        return
     }
 }
