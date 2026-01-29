@@ -6,15 +6,19 @@ export function UI(dealer, player) {
     playbtn.addEventListener("click", () => {
         const initialCard = 2
 
+        player.getNewDeck()
         player.drawCard(initialCard)
         console.log(player.getHandValue())
-
-
-        dealer.resetHand()
-        player.resetHand()
     })
 
     hitbtn.addEventListener("click", () => {
+        player.drawCard(1)
+        console.log(player.getHandValue())
         
+        
+    })
+
+    stopbtn.addEventListener("click", ()=>{
+        player.resetHand()
     })
 }

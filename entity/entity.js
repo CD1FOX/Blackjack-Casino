@@ -31,5 +31,10 @@ export class Entity {
 
     resetHand() {
         this.hand = []
+        this.getNewDeck()
+    }
+
+    getNewDeck(){
+        this.cardDealer.shuffleDeckCard() 
     }
 }

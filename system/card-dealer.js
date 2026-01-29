@@ -3,18 +3,18 @@ const deckValueCards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", 
 export let indexCombination = []
 
 export class CardDealer {
-    shuffleDeckCard (){
+    shuffleDeckCard() {
         indexCombination = []
 
-        for (let symbol of cardSymbol){
-            for (let value of deckValueCards){
+        for (let symbol of cardSymbol) {
+            for (let value of deckValueCards) {
                 indexCombination.push(`${symbol}${value}`)
             }
         }
     }
 
-    drawRandomCard(){
-        if (indexCombination.length === 0){
+    drawRandomCard() {
+        if (indexCombination.length === 0) {
             return "No more combinations"
         }
 
