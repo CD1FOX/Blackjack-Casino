@@ -1,3 +1,7 @@
+import { CardDealer } from "../system/card-dealer.js"
+
+const cardDealer = new CardDealer()
+
 export function UI(dealer, player) {
     const playbtn = document.querySelector(".play-btn")
     const hitbtn = document.querySelector(".hit-btn")
@@ -6,8 +10,12 @@ export function UI(dealer, player) {
     playbtn.addEventListener("click", () => {
         const initialCard = 2
 
-        player.getNewDeck()
+        cardDealer.shuffleDeckCard()
+        
+        dealer.drawCard(initialCard)
         player.drawCard(initialCard)
+
+        console.log(dealer.getHandValue())
         console.log(player.getHandValue())
     })
 
