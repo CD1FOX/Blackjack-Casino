@@ -26,6 +26,9 @@ export class Entity {
         }
 
         console.log(this.name + ": " + this.handValue)
+        if (this.handValue > 21){
+            console.log(`${this.name} bust`)
+        }
         return this.handValue
     }
 

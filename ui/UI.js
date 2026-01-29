@@ -24,8 +24,6 @@ export function UI(dealer, player) {
 
         dealer.getHandValue()
         player.getHandValue()
-
-
     })
 
     hitbtn.addEventListener("click", () => {
@@ -36,11 +34,10 @@ export function UI(dealer, player) {
     })
 
     standbtn.addEventListener("click", () => {
-        console.log("Player stand")
         playbtn.disabled = true
         hitbtn.disabled = true
         standbtn.disabled = true
 
-        dealer.decideDealerAction()
+        dealer.decideDealerAction(dealer.handValue, player.handValue)
     })
 }
