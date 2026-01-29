@@ -10,8 +10,6 @@ export class Entity {
     }
 
     drawCard(cardAmount) {
-        this.hand = []
-        
         for (let i = 0; cardAmount > i; i++){
             this.hand.push(this.cardDealer.drawRandomCard())
         }
@@ -26,12 +24,12 @@ export class Entity {
             handValue += this.handValueEvaluator.determineCardValue(card, handValue)
         }
 
+        console.log(this.name + ": " + handValue)
         return handValue
     }
 
     resetHand() {
         this.hand = []
-        this.getNewDeck()
     }
 
     getNewDeck(){

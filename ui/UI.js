@@ -14,18 +14,21 @@ export function UI(dealer, player) {
         standbtn.disabled = false
         hitbtn.disabled = false
 
+        dealer.resetHand()
+        player.resetHand()
+        
         cardDealer.shuffleDeckCard()
 
         dealer.drawCard(initialCard)
         player.drawCard(initialCard)
 
-        console.log(dealer.getHandValue())
-        console.log(player.getHandValue())
+        dealer.getHandValue()
+        player.getHandValue()
     })
 
     hitbtn.addEventListener("click", () => {
         player.drawCard(1)
-        console.log(player.getHandValue())
+        player.getHandValue()
         
         
     })
