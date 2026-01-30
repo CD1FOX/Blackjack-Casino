@@ -13,4 +13,8 @@ export function UI(dealer, player) {
     hitbtn.addEventListener("click", () => {
         hitLogic(dealer, player)
     })
+
+    standbtn.addEventListener("click", () => {
+        dealer.decideDealerAction()
+    })
 }
