@@ -1,5 +1,6 @@
 import { Entity } from "./entity.js";
 import { HandValueEvaluator } from "../system/hand-value-evaluator.js";
+import { decideWinner } from "../system/decide-winner.js";
 
 const handValueEvaluator = new HandValueEvaluator()
 
@@ -49,9 +50,11 @@ export class Dealer extends Entity {
                 this.decideDealerAction()
             } else if (this.handValue >= 17 && this.handValue <= 21) {
                 console.log("Dealer will stand")
+                return
             } else {
                 console.log(handValueEvaluator.determineBust(this.handValue, this.name))
+                return
             }
-        }, (2000));
+        }, (1000));
     }
 }

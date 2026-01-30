@@ -1,5 +1,6 @@
 import { gameLogic } from "../system/game-logic.js"
 import { hitLogic } from "../system/hit-logic.js"
+import { decideWinner } from "../system/decide-winner.js"
 
 export function UI(dealer, player) {
     const playbtn = document.querySelector(".play-btn")
@@ -14,7 +15,10 @@ export function UI(dealer, player) {
         hitLogic(dealer, player)
     })
 
-    standbtn.addEventListener("click", () => {
+    standbtn.addEventListener("click", async () => {
         dealer.decideDealerAction()
+        setTimeout(()=>{
+            console.log(decideWinner(dealer.handValue, player.handValue))
+        }, 5000)
     })
 }
