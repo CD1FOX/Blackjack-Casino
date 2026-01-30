@@ -3,8 +3,8 @@ import { HandValueEvaluator } from "./hand-value-evaluator.js"
 import { Dealer } from "../Entities/dealer.js"
 
 const handValueEvaluator = new HandValueEvaluator()
-const player = new Entity("player")
-const dealer = new Dealer("dealer")
+const player = new Entity("Player")
+const dealer = new Dealer("Dealer")
 
 export class GameController {
     constructor() {
@@ -21,8 +21,6 @@ export class GameController {
 
         dealer.handValue = handValueEvaluator.determineHandValue(dealer.hand)
         player.handValue = handValueEvaluator.determineHandValue(player.hand)
-
-        console.log("hi")
     }
 
     hit() {
