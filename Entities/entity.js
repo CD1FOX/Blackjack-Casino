@@ -1,20 +1,21 @@
-import { CardDealer } from "../system/card-dealer.js"
 import { HandValueEvaluator } from "../system/hand-value-evaluator.js"
+import { Dealer } from "./dealer.js"
+
+
+const handValueEvaluator = new HandValueEvaluator()
+const dealer = new Dealer()
 
 export class Entity {
     constructor(name) {
         this.name = name
         this.hand = []
         this.handValue = 0
-        this.cardDealer = new CardDealer()
-        this.handValueEvaluator = new HandValueEvaluator()
     }
 
     drawCard(cardAmount) {
         for (let i = 0; cardAmount > i; i++) {
-            this.hand.push(this.cardDealer.drawRandomCard())
+            this.hand.push(dealer.drawRandomCard())
         }
-
         this.dispalyHand()
     }
 
@@ -22,10 +23,8 @@ export class Entity {
         this.handValue = 0
 
         for (const card of this.hand) {
-            this.handValue += this.handValueEvaluator.determineCardValue(card, this.handValue)
+            this.handValue += handValueEvaluator.determineCardValue(card, this.handValue)
         }
-
-        this.displayHandValue()
 
         return this.handValue
     }

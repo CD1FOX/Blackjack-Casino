@@ -1,5 +1,5 @@
-import { Dealer } from "./entity/dealer.js"
-import { Entity } from "./entity/entity.js"
+import { Dealer } from "./Entities/dealer.js"
+import { Entity } from "./Entities/entity.js"
 import { UI } from "./ui/UI.js"
 
 const player = new Entity("player")
