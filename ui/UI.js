@@ -1,8 +1,6 @@
-import { hitLogic } from "../system/hit-logic.js"
-import { decideWinner } from "../system/decide-winner.js"
 import { GameController } from "../system/game-controller.js"
 
-export function UI(dealer, player) {
+export function UI() {
     const playbtn = document.querySelector(".play-btn")
     const hitbtn = document.querySelector(".hit-btn")
     const standbtn = document.querySelector(".stand-btn")
