@@ -7,7 +7,7 @@ export function hitLogic(dealer, player){
 
     player.hand.push(dealer.drawCard(hitCardAmount)[0])
     player.handValue = handValueEvaluator.determineHandValue(player.hand)
-    console.log(handValueEvaluator.determineBust(player.handValue, player.name))
+    player.bust = handValueEvaluator.determineBust(player.handValue, player.name)
 
     player.displayHand()
     player.displayHandValue()

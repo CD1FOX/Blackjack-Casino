@@ -1,10 +1,18 @@
 export function decideWinner(dealer, player) {
-    
-    if (dealer > player) {
+    console.log(dealer.bust, player.bust)
+    if (player.bust){
         return "Dealer won"
-    } else if (dealer < player) {
+    }
+    
+    if (dealer.bust){
         return "Player won"
-    } else if (dealer === player) {
+    } 
+
+    if (dealer.handValue > player.handValue) {
+        return "Dealer won"
+    } else if (dealer.handValue < player.handValue) {
+        return "Player won"
+    } else if (dealer.handValue === player.handValue) {
         return "Tie"
     }
 

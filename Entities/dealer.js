@@ -52,8 +52,7 @@ export class Dealer extends Entity {
                 console.log("Dealer will stand")
                 return
             } else {
-                console.log(handValueEvaluator.determineBust(this.handValue, this.name))
-                return
+                this.bust = handValueEvaluator.determineBust(this.handValue, this.name)
             }
         }, (1000));
     }

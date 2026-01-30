@@ -18,7 +18,7 @@ export function UI(dealer, player) {
     standbtn.addEventListener("click", async () => {
         dealer.decideDealerAction()
         setTimeout(()=>{
-            console.log(decideWinner(dealer.handValue, player.handValue))
+            console.log(decideWinner(dealer, player))
         }, 5000)
     })
 }
