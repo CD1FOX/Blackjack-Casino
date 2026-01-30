@@ -21,6 +21,8 @@ export class GameController {
 
         dealer.handValue = handValueEvaluator.determineHandValue(dealer.hand)
         player.handValue = handValueEvaluator.determineHandValue(player.hand)
+
+        console.log("hi")
     }
 
     hit() {
