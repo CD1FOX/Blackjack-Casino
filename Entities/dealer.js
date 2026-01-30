@@ -20,7 +20,6 @@ export class Dealer extends Entity {
     }
 
     drawCard(cardAmount) {
-
         if (indexCombination.length === 0) {
             return "No more combinations"
         }

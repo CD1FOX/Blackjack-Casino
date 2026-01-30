@@ -7,10 +7,6 @@ const player = new Entity("Player")
 const dealer = new Dealer("Dealer")
 
 export class GameController {
-    constructor() {
-
-    }
-
     start() {
         const initialCards = 2
 
@@ -38,3 +34,4 @@ export class GameController {
         }, 5000)
     }
 }
+
