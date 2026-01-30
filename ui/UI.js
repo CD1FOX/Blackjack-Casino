@@ -1,24 +1,15 @@
-import { gameLogic } from "../system/game-logic.js"
 import { hitLogic } from "../system/hit-logic.js"
 import { decideWinner } from "../system/decide-winner.js"
+import { GameController } from "../system/game-controller.js"
 
 export function UI(dealer, player) {
     const playbtn = document.querySelector(".play-btn")
     const hitbtn = document.querySelector(".hit-btn")
     const standbtn = document.querySelector(".stand-btn")
 
-    playbtn.addEventListener("click", () => {
-        gameLogic(dealer, player)
-    })
+    playbtn.addEventListener("click", GameController.start())
 
-    hitbtn.addEventListener("click", () => {
-        hitLogic(dealer, player)
-    })
+    hitbtn.addEventListener("click", GameController.hit())
 
-    standbtn.addEventListener("click", async () => {
-        dealer.decideDealerAction()
-        setTimeout(()=>{
-            console.log(decideWinner(dealer, player))
-        }, 5000)
-    })
+    standbtn.addEventListener("click", GameController.stand())
 }
