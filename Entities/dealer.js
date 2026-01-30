@@ -15,17 +15,22 @@ export class Dealer extends Entity {
         }
     }
 
-    drawCard() {
+    drawCard(cardAmount) {
+        
         if (indexCombination.length === 0) {
             return "No more combinations"
         }
 
         let cards = []
 
+        for (let i = 0; cardAmount > i; i++){
+            const randomIndex = Math.floor(Math.random() * indexCombination.length)
+            const card = indexCombination.splice(randomIndex, 1)[0]
 
+            cards.push(card)
+        }
 
-        const randomIndex = Math.floor(Math.random() * indexCombination.length)
-        return indexCombination.splice(randomIndex, 1)[0]
+        return cards
     }
 
     decideDealerAction(dealer, player) {

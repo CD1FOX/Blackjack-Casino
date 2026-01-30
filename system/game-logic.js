@@ -1,14 +1,21 @@
+import { HandValueEvaluator } from "./hand-value-evaluator.js"
+
+const handValueEvaluator = new HandValueEvaluator()
+
 export function GameLogic(dealer, player){
     const initialCards = 2
     
     dealer.shuffleDeckCard()
 
-    dealer.drawCard(initialCards)
-    player.drawCard(initialCards)
+    dealer.hand = dealer.drawCard(initialCards)
+    player.hand = dealer.drawCard(initialCards)
 
-    const dealerHandValue = dealer.getHandValue()
-    const playerHandValue = player.getHandValue()
+    dealer.displayHand()
+    player.displayHand()
 
-    console.log("Dealer: " + dealerHandValue)
-    console.log("Player: " + playerHandValue)
+    dealer.handValue = handValueEvaluator.determineHandValue(dealer.hand)
+    player.handValue = handValueEvaluator.determineHandValue(player.hand)
+
+    dealer.displayHandValue()
+    player.displayHandValue()
 }

@@ -1,14 +1,19 @@
 export class HandValueEvaluator {
-    determineCardValue(card, handValue) {
-        let value = card.slice(1)
+    determineHandValue(hand) {
+        let handValue = 0
 
-        if (isFinite(value)) {
-            return Number(value)
-        } else if (value === "A") {
-            return this.determineAceValue(handValue)
-        } else {
-            return 10
+        for (const card of hand) {
+            let value = card.slice(1)
+
+            if (isFinite(value)) {
+                handValue += Number(value)
+            } else if (value === "A") {
+                handValue += this.determineAceValue(handValue)
+            } else {
+                handValue += 10
+            }
         }
+        return handValue
     }
 
     determineAceValue(handValue) {
