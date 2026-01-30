@@ -19,5 +19,13 @@ export function UI() {
         game.stand()
     })
 
+
 }
 
+export function displayHand(entity) {
+    console.log(`${entity.name}: ${entity.hand}`)
+}
+
+export function displayHandValue(entity) {
+    console.log(`${entity.name}: ${entity.handValue}`)
+}
