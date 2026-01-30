@@ -1,4 +1,5 @@
-import { GameLogic } from "../system/game-logic.js"
+import { gameLogic } from "../system/game-logic.js"
+import { hitLogic } from "../system/hit-logic.js"
 
 export function UI(dealer, player) {
     const playbtn = document.querySelector(".play-btn")
@@ -6,6 +7,10 @@ export function UI(dealer, player) {
     const standbtn = document.querySelector(".stand-btn")
 
     playbtn.addEventListener("click", () => {
-        GameLogic(dealer, player)
+        gameLogic(dealer, player)
+    })
+
+    hitbtn.addEventListener("click", () => {
+        hitLogic(dealer, player)
     })
 }

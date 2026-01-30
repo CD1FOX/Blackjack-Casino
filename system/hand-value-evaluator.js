@@ -26,7 +26,7 @@ export class HandValueEvaluator {
 
     determineBust(handValue, name) {
         if (handValue > 21) {
-            console.log(`${name} bust`)
+            return `${name} bust`
         }
     }
 }

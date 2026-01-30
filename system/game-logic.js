@@ -2,7 +2,7 @@ import { HandValueEvaluator } from "./hand-value-evaluator.js"
 
 const handValueEvaluator = new HandValueEvaluator()
 
-export function GameLogic(dealer, player){
+export function gameLogic(dealer, player){
     const initialCards = 2
     
     dealer.shuffleDeckCard()
