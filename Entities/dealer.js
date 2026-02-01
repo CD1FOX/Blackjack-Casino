@@ -1,6 +1,5 @@
 import { Entity } from "./entity.js";
 import { HandValueEvaluator } from "../system/hand-value-evaluator.js";
-import { decideWinner } from "../system/decide-winner.js";
 
 const handValueEvaluator = new HandValueEvaluator()
 
@@ -37,22 +36,17 @@ export class Dealer extends Entity {
     }
 
     decideDealerAction() {
-        setTimeout(() => {
-            if (this.handValue < 17) {
-                console.log("dealer will draw card")
-                this.hand.push(this.drawCard(1)[0])
-                this.handValue = handValueEvaluator.determineHandValue(this.hand)
+        if (this.handValue < 17) {
+            console.log("Dealer will draw card")
+            this.hand.push(this.drawCard(1)[0])
+            this.handValue = handValueEvaluator.determineHandValue(this.hand)
 
-                this.displayHand()
-                this.displayHandValue()
-
-                this.decideDealerAction()
-            } else if (this.handValue >= 17 && this.handValue <= 21) {
-                console.log("Dealer will stand")
-                return
-            } else {
-                this.bust = handValueEvaluator.determineBust(this.handValue, this.name)
-            }
-        }, (1000));
+            this.decideDealerAction()
+        } else if (this.handValue >= 17 && this.handValue <= 21) {
+            console.log("Dealer will stand")
+            return
+        } else {
+            this.bust = handValueEvaluator.determineBust(this.handValue, this.name)
+        }
     }
 }

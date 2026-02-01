@@ -1,6 +1,7 @@
 import { Entity } from "../Entities/entity.js"
 import { HandValueEvaluator } from "./hand-value-evaluator.js"
 import { Dealer } from "../Entities/dealer.js"
+import { decideWinner } from "../system/decide-winner.js"
 import { displayHand, displayHandValue } from "../userInterface/UI.js"
 
 const handValueEvaluator = new HandValueEvaluator()
@@ -39,9 +40,9 @@ export class GameController {
 
     stand() {
         dealer.decideDealerAction()
-        setTimeout(() => {
-            console.log(decideWinner(dealer, player))
-        }, 5000)
+        displayHand(dealer)
+        displayHandValue(dealer)
+        console.log(decideWinner(dealer, player));        
     }
 }
 
