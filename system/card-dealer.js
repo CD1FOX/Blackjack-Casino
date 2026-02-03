@@ -36,4 +36,16 @@ export class CardDealer {
 
         return initialHand
     }
+
+    removeHandFromDeck(hand, deck){
+        for (const card of hand){
+            const index = deck.indexOf(card)
+            
+            if (index !== -1){
+                deck.splice(index, 1)
+            }
+        }
+
+        return deck
+    }
 }
