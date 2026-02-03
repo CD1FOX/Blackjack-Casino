@@ -1,0 +1,2 @@
+- Add feauture, Player should not be able to hit again when got bust
+- Add feauture, Dealer can draw more cards depending on it's current hand value
