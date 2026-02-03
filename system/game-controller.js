@@ -4,8 +4,9 @@ const cardDealer = new CardDealer()
 
 export class GameController {
     startGame() {
-        let card = cardDealer.createDeck()
+        let deck = cardDealer.createDeck()
 
-        console.log(card)
+        console.log(cardDealer.drawCard(deck))
+        console.log(deck)
     }
 }
