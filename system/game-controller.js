@@ -1,12 +1,18 @@
+import { Entities } from "../entities/entities.js"
 import { CardDealer } from "./card-dealer.js"
 
 const cardDealer = new CardDealer()
+
+const player = new Entities("Player")
+const dealer = new Entities("Dealer")
 
 export class GameController {
     startGame() {
         let deck = cardDealer.createDeck()
 
-        console.log(cardDealer.drawCard(deck))
+        player.hand = cardDealer.getInitialHand(player.initialCards, deck)
+
+        console.log(player.hand)
         console.log(deck)
     }
 }

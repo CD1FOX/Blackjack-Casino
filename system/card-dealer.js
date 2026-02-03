@@ -19,11 +19,21 @@ export class CardDealer {
         return deck
     }
 
-    drawCard(deck) {
+    drawCards(deck) {
         const randomIndex = Math.floor(Math.random() * deck.length)
 
         const randomCard = deck[randomIndex]
 
         return randomCard
+    }
+
+    getInitialHand(initialCards, deck) {
+        let initialHand = []
+
+        for (let i = 0; initialCards > i; i++) {
+            initialHand.push(this.drawCards(deck))
+        }
+
+        return initialHand
     }
 }
