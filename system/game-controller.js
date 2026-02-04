@@ -19,6 +19,6 @@ export class GameController {
         
 
         console.log(player.hand)
-        console.log(deck)
+        console.log(dealer.hand)
     }
 }
