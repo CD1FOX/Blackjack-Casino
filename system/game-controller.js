@@ -11,8 +11,12 @@ export class GameController {
         let deck = cardDealer.createDeck()
 
         player.hand = cardDealer.getInitialHand(player.initialCards, deck)
+        dealer.hand = cardDealer.getInitialHand(dealer.initialCards, deck)
+        
         cardDealer.removeHandFromDeck(player.hand, deck)
-        console.log(deck)
+        cardDealer.removeHandFromDeck(dealer.hand, deck)
+
+        
 
         console.log(player.hand)
         console.log(deck)
