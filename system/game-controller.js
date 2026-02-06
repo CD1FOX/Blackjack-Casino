@@ -39,6 +39,11 @@ export class GameController {
 
         player.handValue = handValueEvaluator.getHandValue(player.hand, player.handValue)
 
+        if (handValueEvaluator.bustChecker(player.handValue)){
+
+            console.log("Player bust")
+        }
+
         console.log(player.hand)
         console.log(player.handValue)
     }

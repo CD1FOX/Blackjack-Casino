@@ -41,4 +41,12 @@ export class HandValueEvaluator {
             return aceAlternativeValue
         }
     }
+
+    bustChecker(handValue){
+        if (handValue > 21){
+            return true
+        } else {
+            return false
+        }
+    }
 }

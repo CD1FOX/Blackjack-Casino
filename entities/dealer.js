@@ -15,13 +15,16 @@ export class Dealer extends Entities {
          * Check if the hand value is greater than or equal 17
          * if it's equal or greater than 17, then stand else hit
          */
-        console.log(1)
         if (this.handValue >= 17) {
             return "Stand"
         } else {
             this.drawAnotherCard(deck)
 
             this.handValue = this.getHandValue()
+
+            if (handValueEvaluator.bustChecker(this.handValue)){
+                console.log("Dealer bust")
+            }
 
             this.decideAction(deck)
         }
