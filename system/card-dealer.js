@@ -19,7 +19,7 @@ export class CardDealer {
         return deck
     }
 
-    drawCards(deck) {
+    drawCard(deck) {
         const randomIndex = Math.floor(Math.random() * deck.length)
 
         const randomCard = deck[randomIndex]
@@ -31,7 +31,7 @@ export class CardDealer {
         let initialHand = []
 
         for (let i = 0; initialCards > i; i++) {
-            initialHand.push(this.drawCards(deck))
+            initialHand.push(this.drawCard(deck))
         }
 
         return initialHand
