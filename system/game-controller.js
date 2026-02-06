@@ -18,7 +18,7 @@ export class GameController {
         cardDealer.removeHandFromDeck(player.hand, deck)
         cardDealer.removeHandFromDeck(dealer.hand, deck)
 
-        handValueEvaluator.getHandValue(player.hand)
+        console.log(handValueEvaluator.getHandValue(player.hand))
 
         console.log(player.hand)
         console.log(dealer.hand)
