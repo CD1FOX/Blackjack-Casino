@@ -4,7 +4,7 @@ import { CardDealer } from "./card-dealer.js"
 import { HandValueEvaluator } from "./hand-value-evaluator.js"
 
 const cardDealer = new CardDealer()
-const handValueEvaluator = new HandValueEvaluator()
+const handValueEvaluator = new HandValueEvaluator() 
 
 const player = new Entities("Player")
 const dealer = new Dealer("Dealer")
@@ -43,6 +43,8 @@ export class GameController {
     }
 
     stand() {
-
+        dealer.decideAction(this.deck)
+        console.log(dealer.hand)
+        console.log(dealer.handValue)
     }
 }
