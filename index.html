@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack Casino</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <button type="button" class="play-btn">Play</button>
-    <button type="button" class="hit-btn">Hit</button>
-    <button type="button" class="stand-btn">Stand</button>
+    <div class="main-container">
+        <div class="head-container">
+            <h1>BlackJack Casino</h1>
+        </div>
+
+        <div class="body-container">
+            <div class="entities-container">
+                <div class="player">
+                    <span class="player-hand-value">Player: 0</span>
+                    <div class="player-cards">
+                    </div>
+                </div>
+
+                <div class="dealer">
+                    <span class="dealer-hand-value">Dealer: 0</span>
+                    <div class="dealer-cards">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button type="button" class="play-btn">Play</button>
+            <button type="button" class="hit-btn">Hit</button>
+            <button type="button" class="stand-btn">Stand</button>
+        </div>
+    </div>
+
+
+
+
 
     <script type="module" src="user-interferance/ui.js"></script>
 </body>
+
 </html>
