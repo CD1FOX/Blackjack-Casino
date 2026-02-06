@@ -9,14 +9,16 @@ const player = new Entities("Player")
 const dealer = new Entities("Dealer")
 
 export class GameController {
+    constructor() {
+        this.deck = cardDealer.createDeck()
+    }
+
     startGame() {
-        let deck = cardDealer.createDeck()
+        player.hand = cardDealer.getInitialHand(player.initialCards, this.deck)
+        dealer.hand = cardDealer.getInitialHand(dealer.initialCards, this.deck)
 
-        player.hand = cardDealer.getInitialHand(player.initialCards, deck)
-        dealer.hand = cardDealer.getInitialHand(dealer.initialCards, deck)
-
-        cardDealer.removeHandFromDeck(player.hand, deck)
-        cardDealer.removeHandFromDeck(dealer.hand, deck)
+        cardDealer.removeHandFromDeck(player.hand, this.deck)
+        cardDealer.removeHandFromDeck(dealer.hand, this.deck)
 
         player.handValue = handValueEvaluator.getHandValue(player.hand, player.handValue)
         dealer.handValue = handValueEvaluator.getHandValue(dealer.hand, dealer.handValue)
@@ -29,6 +31,6 @@ export class GameController {
     }
 
     cardHit() {
-        
+
     }
 }
