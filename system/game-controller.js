@@ -31,6 +31,13 @@ export class GameController {
     }
 
     cardHit() {
+        player.hand.push(cardDealer.drawCards(this.deck))
 
+        cardDealer.removeHandFromDeck(player.hand, this.deck)
+
+        player.handValue = handValueEvaluator.getHandValue(player.hand, player.handValue)
+
+        console.log(player.hand)
+        console.log(player.handValue)
     }
 }
