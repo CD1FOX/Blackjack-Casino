@@ -40,4 +40,8 @@ export class GameController {
         console.log(player.hand)
         console.log(player.handValue)
     }
+
+    stand() {
+        
+    }
 }
