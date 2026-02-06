@@ -14,13 +14,21 @@ export class GameController {
 
         player.hand = cardDealer.getInitialHand(player.initialCards, deck)
         dealer.hand = cardDealer.getInitialHand(dealer.initialCards, deck)
-        
+
         cardDealer.removeHandFromDeck(player.hand, deck)
         cardDealer.removeHandFromDeck(dealer.hand, deck)
 
-        console.log(handValueEvaluator.getHandValue(player.hand))
+        player.handValue = handValueEvaluator.getHandValue(player.hand, player.handValue)
+        dealer.handValue = handValueEvaluator.getHandValue(dealer.hand, dealer.handValue)
 
         console.log(player.hand)
         console.log(dealer.hand)
+
+        console.log(player.handValue)
+        console.log(dealer.handValue)
+    }
+
+    cardHit() {
+        
     }
 }
