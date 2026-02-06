@@ -1,6 +1,7 @@
 import { Dealer } from "../entities/dealer.js"
 import { Entities } from "../entities/entities.js"
 import { CardDealer } from "./card-dealer.js"
+import { decideWinner } from "./decide-winner.js"
 import { HandValueEvaluator } from "./hand-value-evaluator.js"
 
 const cardDealer = new CardDealer()
@@ -46,5 +47,7 @@ export class GameController {
         dealer.decideAction(this.deck)
         console.log(dealer.hand)
         console.log(dealer.handValue)
+
+        console.log(decideWinner(player.handValue, dealer.handValue))
     }
 }
