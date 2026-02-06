@@ -1,7 +1,9 @@
 import { CardDealer } from "../system/card-dealer.js";
+import { WinnerDecider } from "../system/winner-decider.js";
 import { Entities } from "./entities.js";
 
 const cardDealer = new CardDealer()
+const winnerDecider = new WinnerDecider()
 
 export class Dealer extends Entities {
     /**
@@ -15,17 +17,13 @@ export class Dealer extends Entities {
          */
 
         if (this.handValue >= 17) {
-            this.stand()
+            return "Stand"
         } else {
             this.getAnotherCard()
         }
     }
 
     getAnotherCard() {
-        return this.hand.push(cardDealer.drawCard())
-    }
-
-    stand() {
-        return null
+        this.hand.push(cardDealer.drawCard())
     }
 }
