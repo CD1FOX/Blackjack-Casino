@@ -1,4 +1,3 @@
-import { Dealer } from "../entities/dealer.js"
 import { Entities } from "../entities/entities.js"
 import { CardDealer } from "./card-dealer.js"
 import { HandValueEvaluator } from "./hand-value-evaluator.js"
@@ -7,7 +6,7 @@ const cardDealer = new CardDealer()
 const handValueEvaluator = new HandValueEvaluator()
 
 const player = new Entities("Player")
-const dealer = new Dealer("Dealer")
+const dealer = new Entities("Dealer")
 
 export class GameController {
     constructor() {
@@ -32,7 +31,7 @@ export class GameController {
     }
 
     cardHit() {
-        player.hand.push(cardDealer.drawCard(this.deck))
+        player.hand.push(cardDealer.drawCards(this.deck))
 
         cardDealer.removeHandFromDeck(player.hand, this.deck)
 
@@ -43,6 +42,6 @@ export class GameController {
     }
 
     stand() {
-
+        
     }
 }
