@@ -1,8 +1,18 @@
+import { UI } from "../user-interferance/ui.js"
+
 export class CardDealer {
     /**
      * Get a deck
      * Get random card
      */
+
+    constructor() {
+        this.ui = null
+    }
+
+    uiInit(){
+       this.ui = new UI() 
+    }
 
     createDeck() {
         const suits = ["♠", "♥", "♦", "♣"]
@@ -23,6 +33,9 @@ export class CardDealer {
         const randomIndex = Math.floor(Math.random() * deck.length)
 
         const randomCard = deck[randomIndex]
+
+        this.uiInit()
+        this.ui.displayCard()
 
         return randomCard
     }
