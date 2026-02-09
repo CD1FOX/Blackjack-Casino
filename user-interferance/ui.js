@@ -31,7 +31,7 @@ export class UI {
          * Set the parent of the element
          */
 
-        const parentNode = document.querySelector(".entity-cards1")
+        const parentNode = document.querySelector(".player-cards")
         const element = this.createElement('div')
         this.setElementClass(element, ".card-box")
         this.setElementText(element, "Test")
