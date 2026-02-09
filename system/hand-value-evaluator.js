@@ -35,15 +35,15 @@ export class HandValueEvaluator {
         const aceAlternativeValue = 11
         const halfBust = 10
 
-        if (handValue > halfBust){
+        if (handValue > halfBust) {
             return aceNormalValue
         } else {
             return aceAlternativeValue
         }
     }
 
-    bustChecker(handValue){
-        if (handValue > 21){
+    bustChecker(handValue) {
+        if (handValue > 21) {
             return true
         } else {
             return false
