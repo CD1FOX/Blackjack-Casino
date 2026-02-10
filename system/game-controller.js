@@ -19,8 +19,8 @@ export class GameController {
         player.hand = cardDealer.getInitialHand(player.initialCards, this.deck)
         dealer.hand = cardDealer.getInitialHand(dealer.initialCards, this.deck)
 
-        // cardDealer.removeCardFromDeck(this.deck)
-        // cardDealer.removeCardFromDeck(this.deck)
+        cardDealer.removeHandFromDeck(player.hand, this.deck)
+        cardDealer.removeHandFromDeck(dealer.hand, this.deck)
 
         player.handValue = handValueEvaluator.getHandValue(player.hand, player.handValue)
         dealer.handValue = handValueEvaluator.getHandValue(dealer.hand, dealer.handValue)
@@ -30,14 +30,12 @@ export class GameController {
 
         console.log(player.handValue)
         console.log(dealer.handValue)
-
-        console.log(this.deck)
     }
 
     cardHit() {
         player.hand.push(cardDealer.drawCard(this.deck))
 
-        // cardDealer.removeCardFromDeck(player.hand, this.deck)
+        cardDealer.removeHandFromDeck(player.hand, this.deck)
 
         player.handValue = handValueEvaluator.getHandValue(player.hand, player.handValue)
 
@@ -48,8 +46,6 @@ export class GameController {
 
         console.log(player.hand)
         console.log(player.handValue)
-
-        console.log(this.deck)
     }
 
     stand() {

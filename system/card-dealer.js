@@ -1,7 +1,4 @@
 import { UI } from "../user-interferance/ui.js"
-import { HandValueEvaluator } from "./hand-value-evaluator.js"
-
-const handValueEvaluator = new HandValueEvaluator()
 
 export class CardDealer {
     /**
@@ -13,8 +10,8 @@ export class CardDealer {
         this.ui = null
     }
 
-    uiInit() {
-        this.ui = new UI()
+    uiInit(){
+       this.ui = new UI() 
     }
 
     createDeck() {
@@ -33,17 +30,12 @@ export class CardDealer {
     }
 
     drawCard(deck) {
-        const randomCard = this.getRandomCard(deck)
-        this.removeCardFromDeck(randomCard, deck)
-        handValueEvaluator
-
-        return randomCard
-    }
-
-    getRandomCard(deck) {
         const randomIndex = Math.floor(Math.random() * deck.length)
 
         const randomCard = deck[randomIndex]
+
+        this.uiInit()
+        this.ui.displayCard()
 
         return randomCard
     }
@@ -58,11 +50,13 @@ export class CardDealer {
         return initialHand
     }
 
-    removeCardFromDeck(card, deck) {
-        const index = deck.indexOf(card)
-
-        if (index !== -1) {
-            deck.splice(index, 1)
+    removeHandFromDeck(hand, deck){
+        for (const card of hand){
+            const index = deck.indexOf(card)
+            
+            if (index !== -1){
+                deck.splice(index, 1)
+            }
         }
 
         return deck

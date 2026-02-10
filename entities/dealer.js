@@ -32,7 +32,7 @@ export class Dealer extends Entities {
     }
 
     drawAnotherCard(deck) {
-        this.hand.push(cardDealer.getRandomCard(deck))
+        this.hand.push(cardDealer.drawCard(deck))
     }
 
     getHandValue(){
