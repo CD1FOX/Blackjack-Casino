@@ -32,9 +32,9 @@ export class CardDealer {
     drawCard(deck) {
         const randomIndex = Math.floor(Math.random() * deck.length)
 
-        const randomCard = deck[randomIndex]
+        const card = deck.splice(randomIndex, 1)[0]
 
-        return randomCard
+        return card
     }
 
     getInitialHand(initialCards, deck) {
