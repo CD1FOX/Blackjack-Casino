@@ -22,6 +22,7 @@ export class Dealer extends Entities {
 
             if (handValueEvaluator.bustChecker(this.handValue)){
                 console.log("Dealer bust")
+                break
             }
         }
 
