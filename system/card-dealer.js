@@ -34,9 +34,6 @@ export class CardDealer {
 
         const randomCard = deck[randomIndex]
 
-        this.uiInit()
-        this.ui.displayCard()
-
         return randomCard
     }
 
