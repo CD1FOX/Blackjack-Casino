@@ -22,7 +22,7 @@ export class UI {
     }
 
 
-    displayCard() {
+    displayCard(card) {
         /**
          * Draw card
          * Create an element
@@ -34,7 +34,7 @@ export class UI {
         const parentNode = document.querySelector(".player-cards")
         const element = this.createElement('div')
         this.setElementClass(element, ".card-box")
-        this.setElementText(element, "Test")
+        this.setElementText(element, card)
         this.setElementParent(element, parentNode)
     }
 

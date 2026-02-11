@@ -6,11 +6,7 @@ export class CardDealer {
      * Get random card
      */
 
-    constructor() {
-        this.ui = null
-    }
-
-    uiInit(){
+    init(){
        this.ui = new UI() 
     }
 
@@ -33,6 +29,9 @@ export class CardDealer {
         const randomIndex = Math.floor(Math.random() * deck.length)
 
         const card = deck.splice(randomIndex, 1)[0]
+
+        this.init()
+        this.ui.displayCard(card)
 
         return card
     }
