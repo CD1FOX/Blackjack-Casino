@@ -19,8 +19,8 @@ export class GameController {
         player.hand = cardDealer.getInitialHand(player.initialCards, this.deck)
         dealer.hand = cardDealer.getInitialHand(dealer.initialCards, this.deck)
 
-        player.handValue = handValueEvaluator.getHandValue(player.hand, player.handValue)
-        dealer.handValue = handValueEvaluator.getHandValue(dealer.hand, dealer.handValue)
+        player.handValue = handValueEvaluator.getHandValue(player.hand)
+        dealer.handValue = handValueEvaluator.getHandValue(dealer.hand)
 
         console.log(player.hand)
         console.log(dealer.hand)
@@ -34,7 +34,7 @@ export class GameController {
     cardHit() {
         player.hand.push(cardDealer.drawCard(this.deck))
 
-        player.handValue = handValueEvaluator.getHandValue(player.hand, player.handValue)
+        player.handValue = handValueEvaluator.getHandValue(player.hand)
 
         if (handValueEvaluator.bustChecker(player.handValue)){
 

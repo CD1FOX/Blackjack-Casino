@@ -1,45 +1,27 @@
 export class HandValueEvaluator {
-    getHandValue(hand, handValue) {
-        let handValues = this.getValueFromHand(hand)
+    getHandValue(hand) {
+        let total = 0
+        let aces = 0
 
-        const aceCard = 'A'
-        const faceCardValue = 10
+        for (const card of hand){
+            const value = card.slice(1)
 
-        let totalHandValue = 0
-
-        for (const cardValue of handValues) {
-            if (isFinite(cardValue)) {
-                totalHandValue += Number(cardValue)
-            } else if (cardValue === aceCard) {
-                totalHandValue += this.getAceValue(handValue)
+            if (value === "A"){
+                total += 11
+                aces++
+            } else if (["J", "Q", "K"].includes(value)){
+                total += 10
             } else {
-                totalHandValue += faceCardValue
+                total += Number(value)
             }
         }
 
-        return totalHandValue
-    }
-
-    getValueFromHand(hand) {
-        let handValues = []
-
-        for (const card of hand) {
-            handValues.push(card.slice(1))
+        while (total > 21 && aces > 0){
+            total -= 10
+            aces--
         }
 
-        return handValues
-    }
-
-    getAceValue(handValue) {
-        const aceNormalValue = 1
-        const aceAlternativeValue = 11
-        const halfBust = 10
-
-        if (handValue > halfBust){
-            return aceNormalValue
-        } else {
-            return aceAlternativeValue
-        }
+        return total
     }
 
     bustChecker(handValue){
