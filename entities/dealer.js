@@ -18,7 +18,7 @@ export class Dealer extends Entities {
         
         while (this.handValue <= 16){
             this.drawAnotherCard(deck)
-            this.handValue = this.getHandValue()
+            this.handValue = handValueEvaluator.getHandValue(this.hand)
 
             if (handValueEvaluator.bustChecker(this.handValue)){
                 console.log("Dealer bust")
@@ -31,9 +31,5 @@ export class Dealer extends Entities {
 
     drawAnotherCard(deck) {
         this.hand.push(cardDealer.drawCard(deck))
-    }
-
-    getHandValue(){
-        return handValueEvaluator.getHandValue(this.hand, this.handValue)
     }
 }
