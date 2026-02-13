@@ -1,3 +1,4 @@
 - Add feauture, Player should not be able to hit again when got bust
-- Hide Dealer 2nd hand
-- Display a card when drawn a card
+- Hide Dealer 2nd card
+- Display a card when its drawn
+- Fix the display card
