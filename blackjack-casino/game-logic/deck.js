@@ -21,4 +21,15 @@ export class Deck {
 
         return card
     }
+
+    getInitialHand() {
+        let initialCardAmount = 2
+        let hand = []
+
+        for (const x = 0; initialCardAmount > x; initialCardAmount--){
+            hand.push(this.getCard())
+        }
+
+        return hand
+    }
 }

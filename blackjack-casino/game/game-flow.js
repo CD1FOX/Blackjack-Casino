@@ -4,7 +4,8 @@ const deck = new Deck()
 
 export class GameFlow{
     startGame(){
-        deck.createDeck()
-        console.log(deck.getCard())
+        const gameDeck = deck.createDeck()
+
+        
     }
 }
