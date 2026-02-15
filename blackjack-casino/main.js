@@ -6,4 +6,6 @@ const playButton = document.querySelector(".play-btn")
 const hitButton = document.querySelector(".hit-btn")
 const standButton = document.querySelector(".stand-btn")
 
-playButton.addEventListener("click", gameFlow.startGame())
+playButton.addEventListener("click", () => {
+    gameFlow.startGame()
+})

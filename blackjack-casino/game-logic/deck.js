@@ -14,5 +14,11 @@ export class Deck {
         }
     }
 
+    getCard() {
+        const randomIndex = Math.floor(Math.random() * (this.combinations.length + 1))
 
+        const card = this.combinations.splice(randomIndex, 1)[0]
+
+        return card
+    }
 }
