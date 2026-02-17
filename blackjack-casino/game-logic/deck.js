@@ -12,6 +12,8 @@ export class Deck {
                 this.combinations.push(`${suit}${value}`)
             }
         }
+
+        return this.combinations
     }
 
     getCard() {
