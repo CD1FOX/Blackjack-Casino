@@ -9,3 +9,7 @@ const standButton = document.querySelector(".stand-btn")
 playButton.addEventListener("click", () => {
     gameFlow.startGame()
 })
+
+hitButton.addEventListener("click", () => {
+    gameFlow.hitCard()
+})

@@ -8,16 +8,27 @@ const player = new Entity("Player")
 const dealer = new Entity("Dealer")
 
 export class GameFlow {
+    constructor() {
+        this.cardDeck = deck.createDeck()
+    }
+
     startGame() {
-        const cardDeck = deck.createDeck()
+
 
         player.hand = deck.getInitialHand(cardDeck)
         dealer.hand = deck.getInitialHand(cardDeck)
 
-        handEvaluator.getHandValue(player.hand)
+        player.handValue = handEvaluator.getHandValue(player.hand)
+        dealer.handValue = handEvaluator.getHandValue(dealer.hand)
 
         console.log(player.hand)
         console.log(dealer.hand)
+        console.log(player.handValue)
+        console.log(dealer.handValue)
         console.log(cardDeck)
+    }
+
+    hitCard() {
+
     }
 }
