@@ -11,5 +11,9 @@ playButton.addEventListener("click", () => {
 })
 
 hitButton.addEventListener("click", () => {
-    gameFlow.hitCard()
+    gameFlow.hit()
+})
+
+standButton.addEventListener("click", ()=>{
+    gameFlow.stand()
 })
