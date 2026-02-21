@@ -1,5 +1,5 @@
 export class HandEvaluator {
-    getHandValue(hand) {
+    getHandValue(hand, entity) {
         let handValue = 0
         let cardAces = 0
         const faceCardValue = 10
@@ -24,10 +24,18 @@ export class HandEvaluator {
             cardAces--
         }
 
+        this.bustChecker(handValue, entity)
+
         return handValue
     }
 
     getCardValue(card) {
         return card.slice(1)
+    }
+
+    bustChecker(handValue, entity){
+        if (handValue > 21){
+            console.log(`${entity} Bust`)
+        }
     }
 }

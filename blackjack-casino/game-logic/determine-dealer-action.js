@@ -11,7 +11,7 @@ export class DetermineDealerAction {
         return new Promise((resolve) => {
             while (dealer.handValue < 17) {
                 dealer.hand.push(cardDealer.getCard(deck))
-                dealer.handValue = handEvaluator.getHandValue(dealer.hand)
+                dealer.handValue = handEvaluator.getHandValue(dealer.hand, dealer)
             }
 
             console.log(dealer.hand)

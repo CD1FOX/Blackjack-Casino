@@ -21,8 +21,8 @@ export class GameFlow {
         player.hand = deck.getInitialHand(this.cardDeck)
         dealer.hand = deck.getInitialHand(this.cardDeck)
 
-        player.handValue = handEvaluator.getHandValue(player.hand)
-        dealer.handValue = handEvaluator.getHandValue(dealer.hand)
+        player.handValue = handEvaluator.getHandValue(player.hand, player)
+        dealer.handValue = handEvaluator.getHandValue(dealer.hand, dealer)
 
         console.log(player.hand)
         console.log(dealer.hand)
@@ -34,7 +34,7 @@ export class GameFlow {
     hit() {
         player.hand.push(deck.getCard(this.cardDeck))
 
-        player.handValue = handEvaluator.getHandValue(player.hand)
+        player.handValue = handEvaluator.getHandValue(player.hand, player)
 
         console.log(player.hand)
         console.log(player.handValue)
