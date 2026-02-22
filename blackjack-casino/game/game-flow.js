@@ -31,7 +31,7 @@ export class GameFlow {
     }
 
     hit() {
-        if (handEvaluator.bustChecker(player.handValue)){
+        if (player.bust){
             console.log("Player bust. Cannot draw more cards")
             return
         }
@@ -39,6 +39,10 @@ export class GameFlow {
         player.hand.push(deck.getCard(this.cardDeck))
 
         player.handValue = handEvaluator.getHandValue(player)
+
+        if (player.bust){
+            console.log(determineWinner.getWinner(player, dealer))
+        }
 
         console.log(player.hand)
         console.log(player.handValue)

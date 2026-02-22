@@ -25,6 +25,7 @@ export class HandEvaluator {
         }
 
         if (this.bustChecker(handValue)){
+            entity.bust = true
             console.log(`${entity.name} bust`)
         }
 
