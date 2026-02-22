@@ -1,30 +1,32 @@
 export class HandEvaluator {
-    getHandValue(hand, entity) {
+    getHandValue(entity) {
         let handValue = 0
         let cardAces = 0
         const faceCardValue = 10
         const normalAceValue = 1
         const alterAceValue = 11
 
-        for (const card of hand) {
+        for (const card of entity.hand) {
             const cardValue = this.getCardValue(card)
 
             if (cardValue === "A") {
                 cardAces++
                 handValue += alterAceValue
-            } else if (["J", "Q", "K"].includes(cardValue)){
+            } else if (["J", "Q", "K"].includes(cardValue)) {
                 handValue += faceCardValue
             } else {
                 handValue += Number(cardValue)
             }
         }
 
-        if (cardAces > 0 && handValue > 21){
+        if (cardAces > 0 && handValue > 21) {
             handValue -= (alterAceValue - normalAceValue)
             cardAces--
         }
 
-        this.bustChecker(handValue, entity)
+        if (this.bustChecker(handValue)){
+            console.log(`${entity.name} bust`)
+        }
 
         return handValue
     }
@@ -33,9 +35,11 @@ export class HandEvaluator {
         return card.slice(1)
     }
 
-    bustChecker(handValue, entity){
-        if (handValue > 21){
-            console.log(`${entity} Bust`)
+    bustChecker(handValue) {
+        if (handValue > 21) {
+            return true
+        } else {
+            return false
         }
     }
 }

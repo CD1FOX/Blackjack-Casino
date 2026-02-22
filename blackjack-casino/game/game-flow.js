@@ -4,7 +4,6 @@ import { DetermineDealerAction } from "../game-logic/determine-dealer-action.js"
 import { DetermineWinner } from "../game-logic/determine-winner.js";
 import { Entity } from "../entities/entity.js";
 
-
 const deck = new Deck()
 const handEvaluator = new HandEvaluator()
 const determineDealerAction = new DetermineDealerAction()
@@ -21,8 +20,8 @@ export class GameFlow {
         player.hand = deck.getInitialHand(this.cardDeck)
         dealer.hand = deck.getInitialHand(this.cardDeck)
 
-        player.handValue = handEvaluator.getHandValue(player.hand, player)
-        dealer.handValue = handEvaluator.getHandValue(dealer.hand, dealer)
+        player.handValue = handEvaluator.getHandValue(player)
+        dealer.handValue = handEvaluator.getHandValue(dealer)
 
         console.log(player.hand)
         console.log(dealer.hand)
@@ -32,9 +31,14 @@ export class GameFlow {
     }
 
     hit() {
+        if (handEvaluator.bustChecker(player.handValue)){
+            console.log("Player bust. Cannot draw more cards")
+            return
+        }
+
         player.hand.push(deck.getCard(this.cardDeck))
 
-        player.handValue = handEvaluator.getHandValue(player.hand, player)
+        player.handValue = handEvaluator.getHandValue(player)
 
         console.log(player.hand)
         console.log(player.handValue)
