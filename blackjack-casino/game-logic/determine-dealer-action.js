@@ -17,7 +17,7 @@ export class DetermineDealerAction {
 
             setTimeout(() => {
                 resolve("Stand")
-            }, 2000)
+            }, 1)
         })
     }
 }

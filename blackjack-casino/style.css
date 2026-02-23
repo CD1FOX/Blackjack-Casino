@@ -75,7 +75,6 @@ body {
 }
 
 button {
-    cursor: pointer;
     height: 50px;
     width: 150px;
     margin: 10px;
@@ -86,7 +85,12 @@ button {
     transition: transform 0.3s, background-color 0.3s;
 }
 
-button:hover {
+button:hover:not(:disabled) {
+    cursor: pointer;
     transform: translateY(-2px);
     background-color: red;
+}
+
+button:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
 }
