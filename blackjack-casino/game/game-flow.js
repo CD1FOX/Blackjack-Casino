@@ -2,6 +2,7 @@ import { Deck } from "../game-logic/deck.js";
 import { HandEvaluator } from "../game-logic/hand-evaluator.js";
 import { DetermineDealerAction } from "../game-logic/determine-dealer-action.js";
 import { DetermineWinner } from "../game-logic/determine-winner.js";
+import { UIRenderer } from "../ui/ui-renderer.js";
 import { Entity } from "../entities/entity.js";
 
 
@@ -9,8 +10,9 @@ const deck = new Deck()
 const handEvaluator = new HandEvaluator()
 const determineDealerAction = new DetermineDealerAction()
 const determineWinner = new DetermineWinner()
-const player = new Entity("Player")
-const dealer = new Entity("Dealer")
+const uiRenderer = new UIRenderer()
+const player = new Entity("player")
+const dealer = new Entity("dealer")
 
 export class GameFlow {
     constructor() {
@@ -20,6 +22,8 @@ export class GameFlow {
     startGame() {
         player.hand = deck.getInitialHand(this.cardDeck)
         dealer.hand = deck.getInitialHand(this.cardDeck)
+
+        uiRenderer.displayEntityHand(player)
 
         player.handValue = handEvaluator.getHandValue(player)
         dealer.handValue = handEvaluator.getHandValue(dealer)

@@ -57,6 +57,10 @@ body {
     gap: 10px;
 }
 
+.player-cards {
+    margin-bottom: 100px;
+}
+
 .card-box {
     background-color: black;
     border: 1px solid blue;
