@@ -38,6 +38,8 @@ body {
     min-height: 500px;
     min-width: 500px;
     align-items: center;
+    position: relative;
+    background-color: gray;
 }
 
 .entity {
@@ -52,13 +54,14 @@ body {
     margin: 10px;
 }
 
+.player-hand-value {
+    position: absolute;
+    top: 340px;
+}
+
 .entity-cards {
     display: flex;
     gap: 10px;
-}
-
-.player-cards {
-    margin-bottom: 100px;
 }
 
 .card-box {

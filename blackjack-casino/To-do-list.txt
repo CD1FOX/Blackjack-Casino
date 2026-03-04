@@ -2,3 +2,6 @@
 - Hide Dealer 2nd card
 - Display a card when its drawn
 - Fix the display card
+
+
+- I want the player value to be fix in one place even there is a card or not
