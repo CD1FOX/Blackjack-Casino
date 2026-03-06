@@ -3,6 +3,25 @@ body {
     margin: 0px;
 }
 
+.contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.resources-display {
+    background-color: rgb(36, 33, 33);
+    color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 5px solid red;
+    border-radius: 20px;
+    min-height: 500px;
+    min-width: 100px;
+    margin-top: 50px;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -15,7 +34,7 @@ body {
     font-size: 3rem;
 }
 
-.body-container {
+.container {
     /* display: flex;
     flex-direction: column;
     gap: 500px;

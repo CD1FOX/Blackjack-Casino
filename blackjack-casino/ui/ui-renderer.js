@@ -7,12 +7,12 @@ export class UIRenderer {
         element.disabled = true
     }
 
-    displayEntityHand(entity){
+    displayEntityHand(entity) {
         const parentClass = document.querySelector(`.${entity.name}-cards`)
 
         parentClass.innerHTML = ""
 
-        for (const card of entity.hand){
+        for (const card of entity.hand) {
             const div = this.createElement("div")
 
             this.addClassToElement(div, "card-box")
@@ -23,19 +23,25 @@ export class UIRenderer {
         }
     }
 
-    createElement(element){
+    createElement(element) {
         return document.createElement(element)
     }
 
-    addClassToElement(element, elementClass){
+    addClassToElement(element, elementClass) {
         element.classList.add(elementClass)
     }
 
-    addElementTextContent(element, textContent){
+    addElementTextContent(element, textContent) {
         element.textContent = textContent
     }
 
-    appendElementParent(element, parent){
+    appendElementParent(element, parent) {
         parent.appendChild(element)
+    }
+
+    displayBust(entity) {
+        const entityHandValue = document.querySelector(`.${entity.name}-hand-value`)
+
+        entityHandValue.textContent = `${entity.name}: bust`
     }
 }

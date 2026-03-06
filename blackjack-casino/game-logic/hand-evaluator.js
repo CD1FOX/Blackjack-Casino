@@ -1,3 +1,7 @@
+import { UIRenderer } from "../ui/ui-renderer.js"
+
+const uiRenderer = new UIRenderer()
+
 export class HandEvaluator {
     getHandValue(entity) {
         let handValue = 0
@@ -26,7 +30,7 @@ export class HandEvaluator {
 
         if (this.bustChecker(handValue)){
             entity.bust = true
-            console.log(`${entity.name} bust`)
+            uiRenderer.displayBust(entity)
         }
 
         return handValue

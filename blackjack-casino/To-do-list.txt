@@ -1,7 +1,14 @@
-- Add feauture, Player should not be able to hit again when got bust
+To be implemented:
+- Display bust when entity bust
+- Display dealer cards
+- Display hand value
 - Hide Dealer 2nd card
-- Display a card when its drawn
-- Fix the display card
+- Move play button into resources Display
+- Add betting ui in the resources display
 
 
+
+Done:
 - I want the player value to be fix in one place even there is a card or not
+- Add feauture, Player should not be able to hit again when got bust
+- Display a card when its drawn
