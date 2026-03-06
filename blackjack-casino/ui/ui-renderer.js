@@ -10,6 +10,8 @@ export class UIRenderer {
     displayEntityHand(entity){
         const parentClass = document.querySelector(`.${entity.name}-cards`)
 
+        parentClass.innerHTML = ""
+
         for (const card of entity.hand){
             const div = this.createElement("div")
 

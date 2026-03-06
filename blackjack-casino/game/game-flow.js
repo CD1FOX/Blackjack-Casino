@@ -43,6 +43,8 @@ export class GameFlow {
 
         player.hand.push(deck.getCard(this.cardDeck))
 
+        uiRenderer.displayEntityHand(player)
+
         player.handValue = handEvaluator.getHandValue(player)
 
         if (player.bust){
