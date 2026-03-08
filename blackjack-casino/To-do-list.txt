@@ -1,9 +1,9 @@
 To be implemented:
-- Display hand value
 - Hide Dealer 2nd card
 - Move play button into resources Display
 - Add betting ui in the resources display
 - Show error pop up when the player is trying to hit card even it busted already
+- Add delay when the dealer draw each card
 
 
 Done:

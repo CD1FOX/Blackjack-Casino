@@ -30,7 +30,6 @@ export class HandEvaluator {
 
         if (this.bustChecker(handValue)){
             entity.bust = true
-            uiRenderer.displayBust(entity)
         }
 
         return handValue

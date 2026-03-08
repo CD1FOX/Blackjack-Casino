@@ -44,4 +44,15 @@ export class UIRenderer {
 
         entityHandValue.textContent = `${entity.name}: bust`
     }
+
+    displayEntityHandValue(entity) {
+        if (entity.bust){
+            this.displayBust(entity)
+            return
+        }
+
+        const entityHandValue = document.querySelector(`.${entity.name}-hand-value`)
+        
+        entityHandValue.textContent = `${entity.name}: ${entity.handValue}`
+    }
 }
