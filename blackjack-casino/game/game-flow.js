@@ -24,7 +24,9 @@ export class GameFlow {
         dealer.hand = deck.getInitialHand(this.cardDeck)
 
         uiRenderer.displayEntityHand(player)
+
         uiRenderer.displayEntityHand(dealer)
+        
 
         player.handValue = handEvaluator.getHandValue(player)
         dealer.handValue = handEvaluator.getHandValue(dealer)
@@ -32,11 +34,6 @@ export class GameFlow {
         uiRenderer.displayEntityHandValue(player)
         uiRenderer.displayEntityHandValue(dealer)
 
-        console.log(player.hand)
-        console.log(dealer.hand)
-        console.log(player.handValue)
-        console.log(dealer.handValue)
-        console.log(this.cardDeck)
     }
 
     hit() {
@@ -56,10 +53,6 @@ export class GameFlow {
         if (player.bust){
             console.log(determineWinner.getWinner(player, dealer))
         }
-
-        console.log(player.hand)
-        console.log(player.handValue)
-        console.log(this.cardDeck)
     }
 
     async stand() { 

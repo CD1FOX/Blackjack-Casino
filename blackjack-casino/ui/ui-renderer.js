@@ -17,6 +17,13 @@ export class UIRenderer {
 
             this.addClassToElement(div, "card-box")
 
+
+            if (entity.name === "dealer" && card === entity.hand[1] && entity.hand.length === 2) {
+                this.appendElementParent(div, parentClass)
+                return
+            }
+
+
             this.addElementTextContent(div, card)
 
             this.appendElementParent(div, parentClass)
@@ -46,13 +53,13 @@ export class UIRenderer {
     }
 
     displayEntityHandValue(entity) {
-        if (entity.bust){
+        if (entity.bust) {
             this.displayBust(entity)
             return
         }
 
         const entityHandValue = document.querySelector(`.${entity.name}-hand-value`)
-        
+
         entityHandValue.textContent = `${entity.name}: ${entity.handValue}`
     }
 }

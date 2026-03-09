@@ -4,6 +4,10 @@ To be implemented:
 - Add betting ui in the resources display
 - Show error pop up when the player is trying to hit card even it busted already
 - Add delay when the dealer draw each card
+- Show who win the game, including the bust win
+- Refactor redundancy in text content in ui-renderer
+- Hide dealer hand value when the 2nd card is hidden
+- Show the dealer 2nd card if the game is deciding who is the winner
 
 
 Done:
