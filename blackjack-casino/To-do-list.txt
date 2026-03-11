@@ -1,5 +1,4 @@
 To be implemented:
-- Add betting ui in the resources display
 - Show error pop up when the player is trying to hit card even it busted already
 - Add delay when the dealer draw each card
 - Show who win the game, including the bust win
@@ -8,6 +7,7 @@ To be implemented:
 - Show the dealer 2nd card if the game is deciding who is the winner
 - Player can still stand even busted already
 - Add coins UI to know how many coins does the player have
+- Make betting system realistic #Player can win and lose depending on their bets
 
 
 Done:
@@ -18,3 +18,4 @@ Done:
 - Display dealer cards
 - Hide Dealer 2nd card
 - Move play button into resources Display
+- Add betting ui in the resources display
