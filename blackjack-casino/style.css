@@ -120,3 +120,7 @@ button:hover:not(:disabled) {
 button:disabled {
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+.play-btn {
+    border: 2px solid white;
+}
