@@ -1,5 +1,4 @@
 To be implemented:
-- Hide Dealer 2nd card
 - Move play button into resources Display
 - Add betting ui in the resources display
 - Show error pop up when the player is trying to hit card even it busted already
@@ -8,6 +7,7 @@ To be implemented:
 - Refactor redundancy in text content in ui-renderer
 - Hide dealer hand value when the 2nd card is hidden
 - Show the dealer 2nd card if the game is deciding who is the winner
+- Player can still stand even busted already
 
 
 Done:
@@ -16,3 +16,4 @@ Done:
 - Display a card when its drawn
 - Display bust when entity bust
 - Display dealer cards
+- Hide Dealer 2nd card
